@@ -555,16 +555,12 @@ section:not(:last-child){
 
 /* ── CURRICULUM ──────────────────────────────────────────────────── */
 #curriculum{background:var(--navy)}
-.curr-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-bottom:40px;
-}
 .curr-week{
   background:var(--navy2);
   border-radius:12px;
   overflow:hidden;
+  width:100%;
+  margin-bottom:20px;
 }
 .curr-week-header{
   padding:20px;
@@ -746,11 +742,160 @@ h2.sub-section{
   .sidenav{display:none}
   .main{margin-left:0}
   section{padding:40px 24px 60px}
-  .curr-grid{grid-template-columns:1fr}
+  
   .brief-panel.active{grid-template-columns:1fr}
   .budget-scale{grid-template-columns:1fr 1fr}
   .do-dont{grid-template-columns:1fr}
   .day-am-pm{grid-template-columns:1fr}
+}
+
+/* ── TOOL FLOW ───────────────────────────────────────────────────── */
+#toolflow{background:var(--navy2)}
+.flow-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  position:relative;
+}
+.flow-phase{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:0;
+  position:relative;
+}
+.flow-phase-label{
+  padding:24px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  border-right:2px solid rgba(255,255,255,0.06);
+  position:relative;
+}
+.flow-phase-label::after{
+  content:'';
+  position:absolute;
+  right:-5px;top:28px;
+  width:8px;height:8px;
+  border-radius:50%;
+  border:2px solid;
+}
+.flow-phase-num{
+  font-family:var(--font-display);
+  font-size:42px;
+  line-height:1;
+  margin-bottom:4px;
+}
+.flow-phase-name{
+  font-size:10px;
+  font-family:var(--font-mono);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  line-height:1.4;
+}
+.flow-phase-week{
+  font-size:10px;
+  font-family:var(--font-mono);
+  color:var(--gray);
+  margin-top:6px;
+}
+.flow-tools{
+  padding:20px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.flow-row{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.flow-tool{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  flex-shrink:0;
+}
+.flow-tool-badge{
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:11px;
+  font-family:var(--font-mono);
+  font-weight:700;
+  letter-spacing:0.5px;
+  white-space:nowrap;
+  border:1px solid;
+}
+.flow-tool-role{
+  font-size:9px;
+  color:var(--gray);
+  text-align:center;
+  font-family:var(--font-mono);
+  max-width:100px;
+  line-height:1.3;
+}
+.flow-arrow{
+  font-size:16px;
+  color:var(--gray);
+  margin-top:8px;
+  flex-shrink:0;
+}
+.flow-handoff{
+  flex:1;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:6px;
+  padding:10px 14px;
+  font-size:11px;
+  color:var(--light);
+  line-height:1.6;
+  align-self:center;
+}
+.flow-handoff strong{color:var(--teal)}
+.flow-handoff.exploratory{
+  border-color:rgba(136,146,164,0.2);
+  background:rgba(136,146,164,0.04);
+}
+.flow-handoff.exploratory strong{color:var(--gray)}
+
+/* Phase colours */
+.phase-w1 .flow-phase-label{border-right-color:rgba(0,201,177,0.3)}
+.phase-w1 .flow-phase-label::after{border-color:var(--teal);background:var(--navy2)}
+.phase-w1 .flow-phase-num,.phase-w1 .flow-phase-name{color:var(--teal)}
+.phase-w2 .flow-phase-label{border-right-color:rgba(232,87,58,0.3)}
+.phase-w2 .flow-phase-label::after{border-color:var(--coral);background:var(--navy2)}
+.phase-w2 .flow-phase-num,.phase-w2 .flow-phase-name{color:var(--coral)}
+.phase-w3 .flow-phase-label{border-right-color:rgba(240,165,0,0.3)}
+.phase-w3 .flow-phase-label::after{border-color:var(--gold);background:var(--navy2)}
+.phase-w3 .flow-phase-num,.phase-w3 .flow-phase-name{color:var(--gold)}
+.phase-anchor .flow-phase-label{border-right-color:rgba(240,165,0,0.5)}
+.phase-anchor .flow-phase-label::after{border-color:var(--gold);background:var(--gold)}
+.phase-anchor .flow-phase-num,.phase-anchor .flow-phase-name{color:var(--gold)}
+
+/* Tool badge variants */
+.tb-teal{background:rgba(0,201,177,0.12);border-color:rgba(0,201,177,0.3);color:var(--teal)}
+.tb-coral{background:rgba(232,87,58,0.12);border-color:rgba(232,87,58,0.3);color:var(--coral)}
+.tb-gold{background:rgba(240,165,0,0.12);border-color:rgba(240,165,0,0.3);color:var(--gold)}
+.tb-purple{background:rgba(123,94,167,0.12);border-color:rgba(123,94,167,0.3);color:var(--purple)}
+.tb-gray{background:rgba(136,146,164,0.1);border-color:rgba(136,146,164,0.2);color:var(--gray)}
+.tb-green{background:rgba(46,204,113,0.12);border-color:rgba(46,204,113,0.3);color:var(--green)}
+.tb-anchor{background:rgba(240,165,0,0.2);border-color:var(--gold);color:var(--gold)}
+
+.flow-legend{
+  display:flex;gap:24px;flex-wrap:wrap;
+  padding:20px 24px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  margin-top:8px;
+}
+.legend-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;color:var(--gray);
+  font-family:var(--font-mono);
+}
+.legend-dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
 }
 </style>
 </head>
@@ -770,6 +915,9 @@ h2.sub-section{
   </a>
   <a class="nav-item" href="#briefs" onclick="setActive(this)">
     <span class="nav-dot"></span>Client Briefs
+  </a>
+  <a class="nav-item" href="#toolflow" onclick="setActive(this)">
+    <span class="nav-dot"></span>Tool Flow
   </a>
   <a class="nav-item" href="#pipeline" onclick="setActive(this)">
     <span class="nav-dot"></span>Pipeline
@@ -1251,9 +1399,317 @@ h2.sub-section{
 
 </section>
 
+
+<!-- ══ TOOL FLOW ══════════════════════════════════════════════════ -->
+<section id="toolflow">
+  <div class="section-eyebrow">Section 03 — Studio Tool Flow</div>
+  <div class="section-title">HOW THE<br>TOOLS CONNECT</div>
+  <p class="section-intro">
+    Every tool has one job and hands off to the next. The client brief is the
+    starting point. OpenArt is the anchor that everything feeds into.
+    Claude sits between students and every platform as their prompting collaborator.
+  </p>
+
+  <div class="flow-grid">
+
+    <!-- CLIENT BRIEF -->
+    <div class="flow-phase phase-w1">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">00</div>
+        <div class="flow-phase-name">Client<br>Brief</div>
+        <div class="flow-phase-week">The starting point</div>
+      </div>
+      <div class="flow-tools">
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">Client Brief</div>
+            <div class="flow-tool-role">Brand guidelines, assets, goals</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-teal">Claude</div>
+            <div class="flow-tool-role">Prompting collaborator</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Students describe the client's brand, audience, and visual needs to <strong>Claude</strong>.
+            Claude helps craft precise, production-ready prompts for every platform.
+            This is how professional AI studios work — Claude is the bridge between
+            creative intent and technical output.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 1 — VISUAL WORLD -->
+    <div class="flow-phase phase-w1">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">01</div>
+        <div class="flow-phase-name">Visual<br>World</div>
+        <div class="flow-phase-week">Week 1 · Days 1–5</div>
+      </div>
+      <div class="flow-tools">
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-teal">Meshy AI</div>
+            <div class="flow-tool-role">Text-to-3D characters + props</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Students build their client's characters and key visual assets in 3D.
+            <strong>Meshy builds spatial understanding</strong> — students who have seen their
+            character from all angles write fundamentally better OpenArt prompts.
+            Meshy renders feed directly into OpenArt's character builder as reference images.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-teal">OpenArt</div>
+            <div class="flow-tool-role">Concept art + character builder</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Meshy renders + Claude-crafted prompts → <strong>OpenArt image generation</strong>.
+            Character Builder locks the character's face and style for the entire film.
+            Concept art library established — every storyboard panel gets a reference image.
+            This visual identity carries through all of Week 3 production.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gray">Luma AI 🌍</div>
+            <div class="flow-tool-role">Gaussian splat · exploratory</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff exploratory">
+            <strong>Exploratory only — portfolio documentation.</strong> Students capture
+            a real Caribbean location on their phone (Day 4 homework) and explore it
+            as a navigable 3D environment on Day 5. Cultural immersion, industry awareness,
+            emerging technology exposure. Does not feed into the client deliverable.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gray">Plask.ai 🕺</div>
+            <div class="flow-tool-role">Motion capture · exploratory</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff exploratory">
+            <strong>Exploratory only — portfolio documentation.</strong> Students record
+            a culturally meaningful movement and watch it become animation data in the browser.
+            Introduces motion capture as an industry concept. Does not feed into the
+            client deliverable.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WEEK 2 — SOUND STAGE -->
+    <div class="flow-phase phase-w2">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">02</div>
+        <div class="flow-phase-name">Sound<br>Stage</div>
+        <div class="flow-phase-week">Week 2 · Days 6–10</div>
+      </div>
+      <div class="flow-tools">
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-coral">Suno AI</div>
+            <div class="flow-tool-role">Scene-matched music</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Storyboard open, musical mood assigned per panel. Claude helps craft music
+            prompts that match the client's brand tone. <strong>Scene-specific tracks generated</strong>
+            and curated into a music library. Selected tracks feed into the final CapCut
+            audio master in Week 3.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-coral">ElevenLabs</div>
+            <div class="flow-tool-role">Voice + dialect narration</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Narration script written panel by panel → fed into <strong>ElevenLabs</strong>.
+            Voice profiles tested and calibrated to the client's audience. Output:
+            timed narration audio, lip-sync ready. This audio file feeds directly into
+            OpenArt Director mode for character lip sync in Week 3.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-coral">Freesound</div>
+            <div class="flow-tool-role">SFX + ambient audio</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Scene-by-scene soundscape — every storyboard panel gets its sonic world.
+            <strong>Freesound + ElevenLabs SFX</strong> layered under music tracks.
+            Full audio master assembled on Day 7 afternoon. This master file
+            is the audio backbone of the final film.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-purple">Python 🐍</div>
+            <div class="flow-tool-role">Soca beat machine · Day 10</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            <strong>Fun session — no client pressure.</strong> PyDub soca beat machine on
+            Day 10 morning. Students build a Caribbean-flavoured track: intro, build, drop.
+            Cool points: if the beat fits the client's video opening or closing,
+            it can be included. Otherwise it's a standalone portfolio piece.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OPENART ANCHOR -->
+    <div class="flow-phase phase-anchor">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">★</div>
+        <div class="flow-phase-name">OpenArt<br>Anchor</div>
+        <div class="flow-phase-week">$56/team · Infinite plan</div>
+      </div>
+      <div class="flow-tools">
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-anchor">OpenArt Director</div>
+            <div class="flow-tool-role">The full studio in one platform</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            <strong>Everything feeds here.</strong> Week 1 character references + concept art
+            + storyboard + Week 2 narration audio + music tracks → students open
+            Director mode and describe their film in conversation. OpenArt generates
+            scenes with consistent characters, lip-synced dialogue, music, and SFX —
+            all in one platform. Kling 3.0 · Veo 3.1 · Sora 2 · Seedance 2.0
+            under one credit pool. Image-to-video · text-to-video · start/end frame ·
+            multi-character scenes · Director mode — students know all of this
+            before Week 3 begins (Day 9 reveal session).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 3 — VIDEO PRODUCTION -->
+    <div class="flow-phase phase-w3">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">03</div>
+        <div class="flow-phase-name">Video<br>Production</div>
+        <div class="flow-phase-week">Week 3 · Days 11–15</div>
+      </div>
+      <div class="flow-tools">
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">OpenArt</div>
+            <div class="flow-tool-role">Full film generation</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Days 11–12: Full film generated in Director mode. All scenes produced
+            with consistent characters. <strong>Start/end frame chaining</strong> applied
+            between scenes for visual continuity. Every clip reviewed against
+            the client brief before keeping. Gap analysis on Day 12 afternoon.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">CapCut</div>
+            <div class="flow-tool-role">Final assembly + polish</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            All OpenArt video clips + locked audio master + narration + titles
+            assembled in <strong>CapCut</strong>. Colour grade, transitions, pacing,
+            credits. Near-final cut screened for client on Day 13.
+            Film locked on Day 14. Watermark-free export ready for delivery.
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">Canva</div>
+            <div class="flow-tool-role">Pitch + portfolio</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Director's commentary presentation built in <strong>Canva</strong> on Day 15.
+            What was the brief? What creative decisions were made? Which tools were
+            used and why? A professional reflection that shows the studio's thinking,
+            not just its output. Delivered at the Premiere alongside the film.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CLIENT TOUCHPOINTS -->
+    <div class="flow-phase phase-w1">
+      <div class="flow-phase-label">
+        <div class="flow-phase-num">🤝</div>
+        <div class="flow-phase-name">Client<br>Touchpoints</div>
+        <div class="flow-phase-week">Days 3 · 8 · 13</div>
+      </div>
+      <div class="flow-tools">
+        <div class="flow-row">
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">Day 3</div>
+            <div class="flow-tool-role">Discovery meeting</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">Day 8</div>
+            <div class="flow-tool-role">Progress review</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-tool">
+            <div class="flow-tool-badge tb-gold">Day 13</div>
+            <div class="flow-tool-role">Near-final review</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-handoff">
+            Three supervised client meetings anchor the camp. <strong>Day 3</strong>: creative brief confirmed.
+            <strong>Day 8</strong>: progress showreel presented, direction adjusted.
+            <strong>Day 13</strong>: near-final cut reviewed, last round of notes collected.
+            Clients may opt to pay for the final deliverable.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end flow-grid -->
+
+  <!-- Legend -->
+  <div class="flow-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div>Week 1 — Visual World</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--coral)"></div>Week 2 — Sound Stage</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div>Week 3 — Video Production</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Python Cool Points</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--gray)"></div>Exploratory — portfolio only</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--gold);border:2px solid var(--gold)"></div>★ OpenArt — paid anchor</div>
+  </div>
+
+</section>
+
 <!-- ══ PIPELINE ════════════════════════════════════════════════════ -->
 <section id="pipeline">
-  <div class="section-eyebrow">Section 03 — Production Pipeline</div>
+  <div class="section-eyebrow">Section 04 — Production Pipeline</div>
   <div class="section-title">17-DAY<br>PIPELINE</div>
   <p class="section-intro">
     Three client touchpoints anchor the camp. Everything before Day 3 is preparation.
@@ -1532,15 +1988,14 @@ h2.sub-section{
 
 <!-- ══ CURRICULUM ══════════════════════════════════════════════════ -->
 <section id="curriculum">
-  <div class="section-eyebrow">Section 04 — Curriculum & Budget</div>
+  <div class="section-eyebrow">Section 05 — Curriculum & Budget</div>
   <div class="section-title">CURRICULUM<br>SUMMARY</div>
   <p class="section-intro">
     Three weeks. Three phases. Every session serves the client deliverable.
     The Python soca day is the one session that belongs entirely to the students.
   </p>
 
-  <div class="curr-grid">
-    <!-- Week 1 -->
+  <!-- Week 1 -->
     <div class="curr-week curr-w1">
       <div class="curr-week-header">
         <div class="curr-week-num">WEEK 1</div>
@@ -1633,7 +2088,10 @@ h2.sub-section{
           <div class="curr-day-info">
             <div class="curr-day-title">Soca Beat Machine + Rough Cut <span class="special-badge badge-python">PYTHON</span></div>
             <div class="curr-day-desc">PyDub soca beat, CapCut rough cut assembly, gap analysis for Week 3</div>
-          </div>>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Week 3 -->
     <div class="curr-week curr-w3">
@@ -1682,7 +2140,6 @@ h2.sub-section{
           </div>
         </div>
       </div>
-    </div>
   </div>
 
   <!-- Closing days -->
