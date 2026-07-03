@@ -89,7 +89,7 @@ body{
 }
 
 /* ── MAIN CONTENT ────────────────────────────────────────────────── */
-.main{margin-left:200px;min-height:100vh}
+.main{margin-left:200px;min-height:100vh;width:calc(100% - 200px);box-sizing:border-box}
 
 /* ── SECTIONS ────────────────────────────────────────────────────── */
 section{
@@ -741,15 +741,17 @@ h2.sub-section{
 @media(max-width:900px){
   /* Nav & layout */
   .sidenav{display:none}
-  .main{margin-left:0}
-  section{padding:32px 16px 48px}
+  .main{margin-left:0;width:100%}
+  section{padding:28px 16px 40px;min-height:auto}
+  #hero{padding:40px 16px}
 
   /* Hero */
   .hero-title{font-size:52px}
   .hero-sub{font-size:24px}
-  .hero-meta{gap:8px}
-  .meta-pill{font-size:11px;padding:6px 10px}
-  .hero-mandate p{font-size:14px}
+  .hero-meta{gap:8px;flex-direction:column}
+  .meta-pill{font-size:11px;padding:6px 10px;width:100%;display:block}
+  .hero-mandate{max-width:100%}
+  .hero-mandate p{font-size:13px}
 
   /* Section headers */
   .section-title{font-size:36px}
