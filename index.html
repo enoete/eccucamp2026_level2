@@ -739,14 +739,88 @@ h2.sub-section{
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
 @media(max-width:900px){
+  /* Nav & layout */
   .sidenav{display:none}
   .main{margin-left:0}
-  section{padding:40px 24px 60px}
-  
+  section{padding:32px 16px 48px}
+
+  /* Hero */
+  .hero-title{font-size:52px}
+  .hero-sub{font-size:24px}
+  .hero-meta{gap:8px}
+  .meta-pill{font-size:11px;padding:6px 10px}
+  .hero-mandate p{font-size:14px}
+
+  /* Section headers */
+  .section-title{font-size:36px}
+  .section-intro{font-size:13px}
+
+  /* Client cards */
+  .clients-grid{grid-template-columns:1fr}
+
+  /* Brief tabs */
+  .briefs-tabs{flex-wrap:wrap;width:100%}
+  .brief-tab{flex:1;text-align:center;font-size:11px;padding:8px 6px}
   .brief-panel.active{grid-template-columns:1fr}
-  .budget-scale{grid-template-columns:1fr 1fr}
   .do-dont{grid-template-columns:1fr}
+  .tool-stack{gap:4px}
+
+  /* Tool flow */
+  .flow-phase{grid-template-columns:1fr}
+  .flow-phase-label{
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding:16px;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+  }
+  .flow-phase-label::after{display:none}
+  .flow-phase-num{font-size:28px}
+  .flow-tools{padding:14px 16px}
+  .flow-row{flex-direction:column;gap:8px}
+  .flow-arrow{transform:rotate(90deg);align-self:center}
+  .flow-handoff{width:100%}
+  .flow-legend{gap:12px}
+
+  /* Pipeline */
+  .pipeline-track::before{left:59px}
+  .day-marker{width:60px}
+  .day-num{width:32px;height:32px;font-size:13px}
+  .day-content{padding:10px 12px}
+  .day-title{font-size:12px}
   .day-am-pm{grid-template-columns:1fr}
+  .am,.pm{font-size:10px}
+  .week-label{padding:6px 12px 6px 76px;font-size:10px}
+
+  /* Curriculum */
+  .curr-week-title{font-size:22px}
+  .curr-week-header{padding:16px}
+  .curr-days{padding:12px 16px}
+  .curr-day-title{font-size:11px}
+  .curr-day-desc{font-size:10px}
+
+  /* Closing days */
+  .closing-days{grid-template-columns:1fr}
+
+  /* Budget */
+  .budget-scale{grid-template-columns:1fr}
+
+  /* Subscriptions table */
+  .sub-table{font-size:11px;display:block;overflow-x:auto}
+
+  /* Footer */
+  .doc-footer{flex-direction:column;gap:8px;text-align:center;padding:20px 16px}
+}
+
+@media(max-width:480px){
+  .hero-title{font-size:40px}
+  .section-title{font-size:28px}
+  .pipeline-track::before{display:none}
+  .day-marker{display:none}
+  .day-content{margin-left:0}
+  .pipeline-day{padding:4px 0}
+  .client-sector{position:static;display:inline-block;margin-top:6px}
 }
 
 /* ── TOOL FLOW ───────────────────────────────────────────────────── */
