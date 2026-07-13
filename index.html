@@ -973,6 +973,40 @@ h2.sub-section{
 .legend-dot{
   width:10px;height:10px;border-radius:50%;flex-shrink:0;
 }
+
+/* ── FACILITATOR BUTTON ── */
+.fac-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;background:rgba(240,165,0,0.1);
+  border:1px solid rgba(240,165,0,0.3);border-radius:5px;
+  color:var(--gold);font-size:11px;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  font-family:var(--font-mono);letter-spacing:0.5px;
+}
+.fac-btn:hover{background:rgba(240,165,0,0.2);border-color:var(--gold)}
+
+/* ── DAY & FACILITATOR BUTTONS ── */
+.day-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;background:rgba(0,201,177,0.12);
+  border:1px solid rgba(0,201,177,0.35);border-radius:5px;
+  color:var(--teal);font-size:11px;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  font-family:var(--font-mono);letter-spacing:0.5px;
+  margin-top:8px;margin-right:6px;
+}
+.day-btn:hover{background:rgba(0,201,177,0.22);border-color:var(--teal)}
+.fac-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;background:rgba(240,165,0,0.1);
+  border:1px solid rgba(240,165,0,0.3);border-radius:5px;
+  color:var(--gold);font-size:11px;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  font-family:var(--font-mono);letter-spacing:0.5px;
+  margin-top:8px;
+}
+.fac-btn:hover{background:rgba(240,165,0,0.2);border-color:var(--gold)}
+.curr-day-btns{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 </style>
 </head>
 <body>
@@ -1001,6 +1035,9 @@ h2.sub-section{
   <a class="nav-item" href="#curriculum" onclick="setActive(this)">
     <span class="nav-dot"></span>Curriculum
   </a>
+  <a class="nav-item" href="#styles" onclick="setActive(this)">
+    <span class="nav-dot"></span>Style References
+  </a>
 </nav>
 
 <!-- ── MAIN ─────────────────────────────────────────────────────── -->
@@ -1018,7 +1055,7 @@ h2.sub-section{
   <div class="hero-meta">
     <div class="meta-pill"><span>📅</span>Jul 13 – Aug 6, 2026</div>
     <div class="meta-pill"><span>📆</span>17 Weekdays</div>
-    <div class="meta-pill"><span>👥</span>4 Teams · 4 Real Clients</div>
+    <div class="meta-pill"><span>👥</span>5 Teams · 4 Real Clients</div>
     <div class="meta-pill"><span>🎬</span>3-Minute Deliverable Per Client</div>
     <div class="meta-pill"><span>🤝</span>Client Meetings: Days 3, 8 & 13</div>
   </div>
@@ -1180,13 +1217,111 @@ h2.sub-section{
   </p>
 
   <div class="briefs-tabs">
-    <button class="brief-tab active" onclick="showBrief('outsource',this)">Outsource Dev</button>
+    <button class="brief-tab active" onclick="showBrief('eccb',this)">ECCB / Credit Bureau</button>
+    <button class="brief-tab" onclick="showBrief('outsource',this)">Outsource Dev</button>
     <button class="brief-tab" onclick="showBrief('digicel',this)">Digicel</button>
     <button class="brief-tab" onclick="showBrief('ird',this)">Inland Revenue</button>
+    <button class="brief-tab" onclick="showBrief('scaspa',this)">SCASPA</button>
+
+
+  <!-- ECCB -->
+  <div id="brief-eccb" class="brief-panel active">
+    <div class="brief-col">
+      <div class="brief-block">
+        <div class="brief-headline">Making Credit Visible for Every Caribbean Citizen</div>
+        <div class="brief-direction">
+          "A film that makes an ordinary Kittitian — a young person, a market vendor, a first-time borrower —
+          understand what credit reporting is, why it matters to their life, and how to take control of it."
+        </div>
+      </div>
+      <div class="brief-block">
+        <h3>Audience</h3>
+        <ul>
+          <li>General public — all citizens across eight OECS member countries</li>
+          <li>Young people entering the credit system for the first time</li>
+          <li>Small business owners and entrepreneurs</li>
+          <li>Financial institutions, utilities, telecoms, hire purchase companies</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Tone & Visual Style</h3>
+        <ul>
+          <li>Warm, accessible, educational — not dry or institutional</li>
+          <li>Animation and motion graphics to explain abstract concepts</li>
+          <li>Caribbean faces and Caribbean settings — authentically OECS</li>
+          <li>Mixed media — animation with real photography integration</li>
+          <li>Colour palette: trust blues, warm golds, clean whites</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Key Messages</h3>
+        <ul>
+          <li>Credit reporting affects every citizen — not just borrowers</li>
+          <li>You have rights — including the right to access your own report</li>
+          <li>Understanding your credit score is the first step to financial freedom</li>
+          <li>ECCB is here to make this system fair and transparent</li>
+        </ul>
+      </div>
+    </div>
+    <div class="brief-col">
+      <div class="brief-block">
+        <h3>Platforms</h3>
+        <ul>
+          <li>Website — eccb-centralbank.org</li>
+          <li>WhatsApp</li>
+          <li>Facebook — ECCB Connects</li>
+          <li>Instagram</li>
+          <li>TikTok</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Available Assets</h3>
+        <ul>
+          <li>Logo files ✓</li>
+          <li>Brand guidelines ✓</li>
+          <li>Product images ✓</li>
+          <li>Scripts & content drafts ✓</li>
+          <li>Social media content ✓</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Tool Stack for This Brief</h3>
+        <div class="tool-stack">
+          <span class="tool-badge"><span class="dot"></span>OpenArt Image & Video</span>
+          <span class="tool-badge"><span class="dot"></span>ElevenLabs</span>
+          <span class="tool-badge"><span class="dot"></span>Suno AI</span>
+          <span class="tool-badge"><span class="dot"></span>CapCut</span>
+          <span class="tool-badge"><span class="dot"></span>Canva</span>
+        </div>
+      </div>
+      <div class="brief-block">
+        <h3>Do / Don't</h3>
+        <div class="do-dont">
+          <div class="do">
+            <h4>✓ DO</h4>
+            <ul class="question-list">
+              <li>Make it feel relevant to everyday life</li>
+              <li>Use clear Caribbean characters</li>
+              <li>Explain credit simply — no jargon</li>
+              <li>End with a clear call to action</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h4>✗ DON'T</h4>
+            <ul class="question-list">
+              <li>Use cold banking visuals</li>
+              <li>Overwhelm with technical terms</li>
+              <li>Make it feel like a government warning</li>
+              <li>Forget the social reel format</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- OUTSOURCE -->
-  <div id="brief-outsource" class="brief-panel active">
+  <div id="brief-outsource" class="brief-panel">
     <div class="brief-col">
       <div class="brief-block">
         <div class="brief-headline">The Human Story of Business Excellence</div>
@@ -1473,6 +1608,112 @@ h2.sub-section{
     </div>
   </div>
 
+
+
+  <!-- SCASPA -->
+  <div id="brief-scaspa" class="brief-panel">
+    <div class="brief-col">
+      <div class="brief-block">
+        <div class="brief-headline">The Gateway to the Federation — by Sea and by Air</div>
+        <div class="brief-direction">
+          "A cinematic brand film that shows the world — passengers, airlines, shipping partners, investors —
+          that SCASPA is more than a port authority. It is the engine of St. Kitts & Nevis's connectivity,
+          trade, and tourism. Professional. Modern. Proud."
+        </div>
+      </div>
+      <div class="brief-block">
+        <h3>Audience</h3>
+        <ul>
+          <li>Airlines, cruise lines, shipping companies, ferry operators</li>
+          <li>Cargo and logistics providers, importers and exporters</li>
+          <li>Tourists — cruise passengers, stay-over visitors, regional travellers</li>
+          <li>Government agencies and strategic partners</li>
+          <li>Investors and regional maritime/aviation partners</li>
+          <li>General public of St. Kitts & Nevis</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Tone & Visual Style</h3>
+        <ul>
+          <li>Cinematic, authoritative, proud — not bureaucratic</li>
+          <li>Mixed media — live action, drone footage, motion graphics, documentary</li>
+          <li>Real locations: runway, port, cruise terminal, cargo facilities</li>
+          <li>Before-and-after project visuals where relevant</li>
+          <li>Colour palette: deep navy, silver, Caribbean sky blue, gold</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Key Messages</h3>
+        <ul>
+          <li>SCASPA is the gateway to the Federation — by sea and by air</li>
+          <li>Safe, efficient, and modern airport and seaport services</li>
+          <li>Driving connectivity, trade, and tourism across St. Kitts & Nevis</li>
+          <li>Transparency, innovation, and stakeholder-focused communication</li>
+        </ul>
+      </div>
+    </div>
+    <div class="brief-col">
+      <div class="brief-block">
+        <h3>Platforms</h3>
+        <ul>
+          <li>Website — scaspa.com</li>
+          <li>Facebook & Instagram — scaspa1993</li>
+          <li>TikTok & YouTube</li>
+          <li>Television</li>
+          <li>Event presentation / screen</li>
+          <li>Airport & cruise terminal digital signage</li>
+          <li>Future SCASPA mobile app</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Available Assets</h3>
+        <ul>
+          <li>Logo files ✓</li>
+          <li>Brand guidelines ✓</li>
+          <li>Existing video footage ✓</li>
+          <li>Professional photos ✓</li>
+          <li>Drone footage ✓</li>
+          <li>CEO & executive interviews ✓</li>
+          <li>Airport & seaport B-roll ✓</li>
+          <li>Historical media archives ✓</li>
+        </ul>
+      </div>
+      <div class="brief-block">
+        <h3>Tool Stack for This Brief</h3>
+        <div class="tool-stack">
+          <span class="tool-badge"><span class="dot"></span>OpenArt Director</span>
+          <span class="tool-badge"><span class="dot"></span>Meshy AI</span>
+          <span class="tool-badge"><span class="dot"></span>ElevenLabs</span>
+          <span class="tool-badge"><span class="dot"></span>Suno AI</span>
+          <span class="tool-badge"><span class="dot"></span>CapCut</span>
+          <span class="tool-badge"><span class="dot"></span>Luma AI</span>
+        </div>
+      </div>
+      <div class="brief-block">
+        <h3>Do / Don't</h3>
+        <div class="do-dont">
+          <div class="do">
+            <h4>✓ DO</h4>
+            <ul class="question-list">
+              <li>Show the scale and scope of operations</li>
+              <li>Use real locations — runway, port, terminal</li>
+              <li>Lead with national pride and connectivity</li>
+              <li>Include stakeholder voices</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h4>✗ DON'T</h4>
+            <ul class="question-list">
+              <li>Make it feel like a government PSA</li>
+              <li>Try to cover everything in 3 minutes</li>
+              <li>Use generic airport stock footage</li>
+              <li>Forget the tourism and trade angle</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -2088,36 +2329,36 @@ h2.sub-section{
             <div class="curr-day-title">Studio Orientation & Client Research</div>
             <div class="curr-day-desc">Team assignments, client briefs introduced, industry research begins</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day1"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">2</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Tool Discovery</div>
             <div class="curr-day-desc">OpenArt, Meshy AI, Claude as prompting partner, moodboard in Canva</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day2"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">3</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Client Meeting 1 <span class="special-badge badge-client">CLIENT</span></div>
             <div class="curr-day-desc">Discovery meeting, creative brief confirmed and locked</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day3"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">4</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Storyboard & Visual World <span class="special-badge badge-splat">SPLAT PREP</span></div>
             <div class="curr-day-desc">6–10 panel storyboard, OpenArt concept images, Luma AI homework briefing</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day4"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">5</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Asset Lock <span class="special-badge badge-splat">SPLAT</span></div>
             <div class="curr-day-desc">Gaussian splat exploration, Plask.ai motion capture, pre-production locked</div>
           </div>
-        </div>
-      </div>
+          <div class="curr-day-btns" id="btn-day5"></div>
+        </div>  </div>
     </div>
 
     <!-- Week 2 -->
@@ -2137,36 +2378,36 @@ h2.sub-section{
             <div class="curr-day-title">Score & Voice</div>
             <div class="curr-day-desc">Suno AI scene music + ElevenLabs narration, panel by panel</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day6"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">7</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Sound Design & Audio Assembly</div>
             <div class="curr-day-desc">SFX + ambient soundscape + full audio master produced, teams hear complete audio</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day7"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">8</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Client Meeting 2 <span class="special-badge badge-client">CLIENT</span></div>
             <div class="curr-day-desc">Progress showreel presented, feedback gathered, adjustments actioned</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day8"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">9</div>
           <div class="curr-day-info">
             <div class="curr-day-title">OpenArt Video Reveal</div>
             <div class="curr-day-desc">Image-to-video, start/end frame, Director mode, consistency techniques</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day9"></div>
+        </div>    <div class="curr-day">
                     <div class="curr-day-num">10</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Soca Beat Machine + Rough Cut <span class="special-badge badge-python">PYTHON</span></div>
             <div class="curr-day-desc">PyDub soca beat, CapCut rough cut assembly, gap analysis for Week 3</div>
           </div>
-        </div>
-      </div>
+          <div class="curr-day-btns" id="btn-day10"></div>
+        </div>  </div>
     </div>
 
     <!-- Week 3 -->
@@ -2186,36 +2427,36 @@ h2.sub-section{
             <div class="curr-day-title">Director Mode Sprint Begins</div>
             <div class="curr-day-desc">Full film generation in OpenArt Director with client assets and storyboard</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day11"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">12</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Production Sprint + First Assembly</div>
             <div class="curr-day-desc">All scenes generated, CapCut full assembly, first complete cut screened</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day12"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">13</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Client Meeting 3 <span class="special-badge badge-client">CLIENT</span></div>
             <div class="curr-day-desc">Near-final cut reviewed, last round of notes, final revision sprint</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day13"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">14</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Final Polish & Film Lock</div>
             <div class="curr-day-desc">All revisions actioned, film locked, delivery package prepared</div>
           </div>
-        </div>
-        <div class="curr-day">
+          <div class="curr-day-btns" id="btn-day14"></div>
+        </div>    <div class="curr-day">
           <div class="curr-day-num">15</div>
           <div class="curr-day-info">
             <div class="curr-day-title">Portfolio & Pitch Prep</div>
             <div class="curr-day-desc">Canva director's commentary, full dress rehearsal of Premiere presentation</div>
           </div>
-        </div>
-      </div>
+          <div class="curr-day-btns" id="btn-day15"></div>
+        </div>  </div>
   </div>
 
   <!-- Closing days -->
@@ -2223,10 +2464,12 @@ h2.sub-section{
     <div class="closing-day">
       <h3>Day 16 <span>Wed Aug 5 — Technical Check & Reflection</span></h3>
       <p>All files confirmed. Audio levels checked. Reflection circle and peer recognition activity. Students name what a teammate did that made the project better.</p>
+      <div class="curr-day-btns" id="btn-day16"></div>
     </div>
     <div class="closing-day">
       <h3>Day 17 <span>Thu Aug 6 — 🎉 Wildcard Day</span></h3>
       <p>No structure. No deliverables. Pure vibes. Certificates, group photograph, and goodbyes. They leave as directors with a real client deliverable in their portfolio.</p>
+      <div class="curr-day-btns" id="btn-day17"></div>
     </div>
   </div>
 
@@ -2288,10 +2531,10 @@ h2.sub-section{
     </tbody>
   </table>
 
-  <h2 class="sub-section" style="margin-top:32px">Monthly Budget — 4 Teams</h2>
+  <h2 class="sub-section" style="margin-top:32px">Monthly Budget — 5 Teams</h2>
   <div class="budget-scale" style="grid-template-columns:1fr">
     <div class="budget-card">
-      <div class="budget-teams">4 teams confirmed</div>
+      <div class="budget-teams">5 teams confirmed</div>
       <div class="budget-cost">$396</div>
       <div class="budget-month">per month · total software cost</div>
     </div>
@@ -2362,6 +2605,203 @@ document.querySelectorAll('.client-card,.curr-week,.budget-card,.closing-day,.br
   el.style.opacity='0';
   fadeObserver.observe(el);
 });
+
+
+// ── JSONBIN — DAY + FACILITATOR BUTTONS ──────────────────────────
+const JSONBIN_ID='6a4b4286da38895dfe335fe9';
+const JSONBIN_URL=`https://api.jsonbin.io/v3/b/${JSONBIN_ID}/latest`;
+
+async function loadDayButtons(){
+  try{
+    const res=await fetch(JSONBIN_URL,{
+      headers:{
+        'X-Master-Key':'$2a$10$YdbExlb2BaD00NW/hIKjcOXwJR/0mx3D/.vsZ62yW6gUFVqNlUQyO',
+        'X-Bin-Meta':false
+      }
+    });
+    if(!res.ok) throw new Error('JSONBin unavailable');
+    const data=await res.json();
+    const record=data.record||data;
+    for(let i=1;i<=17;i++){
+      const url=record[`day${i}`];
+      const facUrl=record[`day${i}_facilitator`];
+      const container=document.getElementById(`btn-day${i}`);
+      if(container){
+        if(url&&url.trim()!==''){
+          const btn=document.createElement('a');
+          btn.href=url; btn.target='_blank';
+          btn.className='day-btn';
+          btn.textContent='▶ Open Session';
+          container.appendChild(btn);
+        }
+        if(facUrl&&facUrl.trim()!==''){
+          const fBtn=document.createElement('a');
+          fBtn.href=facUrl; fBtn.target='_blank';
+          fBtn.className='fac-btn';
+          fBtn.textContent='🔒 Facilitator Guide';
+          container.appendChild(fBtn);
+        }
+      }
+    }
+  }catch(err){
+    console.log('Day buttons not loaded:',err.message);
+  }
+}
+loadDayButtons();
+
 </script>
+
+<section id="styles">
+  <div class="section-eyebrow">Section 06 — Visual Language</div>
+  <div class="section-title">STYLE<br>REFERENCES</div>
+  <p class="section-intro">
+    Six production styles that fit your clients' briefs. Use this in client meetings —
+    show the reference videos, let the client react, and confirm their visual direction
+    before production begins.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:960px">
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:var(--teal);opacity:0.2;line-height:1">01</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">Motion Graphics & Infographic</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Data · Process · Service explanation</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Text, shapes, icons, and data brought to life through animation. Clean, modern, brand-forward. Best for explaining abstract concepts and services visually.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(46,204,113,0.1);color:#2ECC71;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">ECCB</span>
+          <span style="background:rgba(240,165,0,0.1);color:var(--gold);font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">Digicel</span>
+          <span style="background:rgba(123,94,167,0.1);color:#7B5EA7;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">IRD</span>
+          <span style="background:rgba(52,152,219,0.1);color:#3498DB;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">SCASPA</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://taxfoundation.org/taxedu/videos/" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07);margin-bottom:6px">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">TaxEDU Animated Explainers</div><div style="font-size:11px;color:var(--muted)">Clean public education motion graphics — perfect IRD/ECCB reference</div><span style="font-size:11px;color:var(--teal)">↗ taxfoundation.org</span></div>
+        </a>
+        <a href="https://www.mainspringagency.com/blog/video-production-16/best-corporate-video-examples-of-2026-60" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Best Corporate Videos 2026 — CrowdSec</div><div style="font-size:11px;color:var(--muted)">Cybersecurity motion graphics — nearly identical to Digicel's brief</div><span style="font-size:11px;color:var(--teal)">↗ mainspringagency.com</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:var(--coral);opacity:0.2;line-height:1">02</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">2D Character Animation</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--coral);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Approachable · Educational · Warm</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Illustrated characters moving through a story. Flat design or expressive cartoon style. Accessible and human. Best for reaching broad audiences with complex or sensitive subjects.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(46,204,113,0.1);color:#2ECC71;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">ECCB</span>
+          <span style="background:rgba(123,94,167,0.1);color:#7B5EA7;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">IRD</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://www.punchystudio.com.au/blog/best-animated-video-examples-for-government/" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Punchy Studio — Government Animation Examples</div><div style="font-size:11px;color:var(--muted)">11 real government animation videos — civic education done well</div><span style="font-size:11px;color:var(--teal)">↗ punchystudio.com.au</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:#7B5EA7;opacity:0.2;line-height:1">03</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">3D Animation & CGI</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:#7B5EA7;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Premium · Cinematic · Immersive</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Three-dimensional rendered environments and characters. High production feel. Best for visualising invisible services, large-scale infrastructure, or premium brand positioning.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(52,152,219,0.1);color:#3498DB;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">SCASPA</span>
+          <span style="background:rgba(240,165,0,0.1);color:var(--gold);font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">Digicel</span>
+          <span style="background:rgba(46,204,113,0.1);color:#2ECC71;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">ECCB</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://www.b2w.tv/blog/best-cyber-security-videos" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07);margin-bottom:6px">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">B2W — Best Cybersecurity Videos</div><div style="font-size:11px;color:var(--muted)">3D tech animation — Panda Security and Accedian examples</div><span style="font-size:11px;color:var(--teal)">↗ b2w.tv</span></div>
+        </a>
+        <a href="https://vimeo.com/bestoftheyear/best-branded-videos" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Vimeo Best Branded 2024 — Jindal Steel Film</div><div style="font-size:11px;color:var(--muted)">Cinematic infrastructure pride — near-perfect SCASPA reference</div><span style="font-size:11px;color:var(--teal)">↗ vimeo.com</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:var(--gold);opacity:0.2;line-height:1">04</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">Cinematic Live Action</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Real · Human · High production value</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Real people, real locations, high production value. Commercial or documentary style. Best for people-centered brands and organisations with a physical world worth capturing.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(0,201,177,0.1);color:var(--teal);font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">Outsource Dev</span>
+          <span style="background:rgba(52,152,219,0.1);color:#3498DB;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">SCASPA</span>
+          <span style="background:rgba(240,165,0,0.1);color:var(--gold);font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">Digicel</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://levitatemedia.com/learn/brand-story-videos-10-great-examples" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07);margin-bottom:6px">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Levitate — Brand Story Video Examples</div><div style="font-size:11px;color:var(--muted)">People-centered cinematic storytelling — ideal Outsource Dev reference</div><span style="font-size:11px;color:var(--teal)">↗ levitatemedia.com</span></div>
+        </a>
+        <a href="https://vimeopro.com/screencraftmedia/brand-films-examples" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Screencraftmedia — Brand Film Portfolio</div><div style="font-size:11px;color:var(--muted)">Cinematic corporate brand films — SCASPA and Outsource Dev reference</div><span style="font-size:11px;color:var(--teal)">↗ vimeopro.com</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:#2ECC71;opacity:0.2;line-height:1">05</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">Mixed Media</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:#2ECC71;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Flexible · Complex · Layered</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Combines two or more styles — live action with motion graphics, documentary interviews with animated data cutaways. The most versatile approach for complex briefs.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(46,204,113,0.1);color:#2ECC71;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">All 5 clients</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://boldcontentvideo.com/2024/07/19/top-10-brand-video-examples-2024/" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07);margin-bottom:6px">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Bold Content — Top 10 Brand Videos 2024</div><div style="font-size:11px;color:var(--muted)">Colt Technologies film — live action + motion graphics, Digicel-identical brief</div><span style="font-size:11px;color:var(--teal)">↗ boldcontentvideo.com</span></div>
+        </a>
+        <a href="https://www.superside.com/blog/corporate-video-storytelling-examples" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Superside — Corporate Video Storytelling</div><div style="font-size:11px;color:var(--muted)">Thomson Reuters CoCounsel — documentary + motion graphics seamlessly combined</div><span style="font-size:11px;color:var(--teal)">↗ superside.com</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden">
+      <div style="padding:20px 22px">
+        <div style="font-family:var(--font-display);font-size:36px;color:var(--coral);opacity:0.2;line-height:1">06</div>
+        <div style="font-family:var(--font-display);font-size:24px;color:var(--white);margin-bottom:6px">Social Media Reel</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--coral);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Vertical · Fast · Platform-native</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">Vertical or square format. Fast cuts. Text overlays. Hook within 2 seconds. Designed for Instagram, TikTok, and WhatsApp — not a shortened main film but a standalone creative challenge.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+          <span style="background:rgba(46,204,113,0.1);color:#2ECC71;font-size:10px;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)">All 5 clients</span>
+        </div>
+      </div>
+      <div style="padding:14px 22px;border-top:1px solid rgba(255,255,255,0.06)">
+        <a href="https://www.columnfivemedia.com/strong-marketing-b2b-video-examples/" target="_blank" style="display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,0.07)">
+          <span style="font-size:16px">▶️</span>
+          <div><div style="font-size:12px;font-weight:600;color:var(--white)">Column Five — B2B Video Examples</div><div style="font-size:11px;color:var(--muted)">SurveyMonkey and Dialpad examples — punchy social-native energy for all five clients</div><span style="font-size:11px;color:var(--teal)">↗ columnfivemedia.com</span></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:36px;padding:22px;background:rgba(0,201,177,0.06);border:1px solid rgba(0,201,177,0.2);border-radius:12px;max-width:760px">
+    <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:10px">How to use this in a Day 3 client meeting</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.8">Show your client the two style references that best match their brief. Play 60–90 seconds of each. Ask: <em style="color:var(--cream)">"Does this feel like your brand — or does it feel like something you'd want to avoid?"</em> Their reaction gives you a creative direction no brief question ever could.</div>
+  </div>
+
+</section>
+
 </body>
 </html>
